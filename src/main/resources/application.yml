@@ -1,0 +1,23 @@
+server:
+  port: 18083
+  servlet:
+    session:
+      timeout: 60
+
+spring:
+  datasource:
+    url: jdbc:sqlite:D:/soft/sqlitestudio311/test.db
+    username:
+    password:
+    driver-class-name: org.sqlite.JDBC
+
+# MyBatis配置
+mybatis:
+  mapper-locations: classpath*:mappers/**/mapper/xml/**.xml
+#  指定POJO扫描包来让mybatis自动扫描到自定义POJO
+  type-aliases-package: io.parcelx
+  base
+  configuration:
+    use-generated-keys: true
+    #进行自动映射时，数据以下划线命名，如数据库返回的"order_address"命名字段是否映射为class的"orderAddress"字段。默认为false
+    map-underscore-to-camel-case: true
