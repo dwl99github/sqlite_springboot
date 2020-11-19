@@ -1,5 +1,5 @@
 server:
-  port: 18083
+  port: 18081
   servlet:
     session:
       timeout: 60
@@ -13,11 +13,12 @@ spring:
 
 # MyBatis配置
 mybatis:
-  mapper-locations: classpath*:mappers/**/mapper/xml/**.xml
+  mapper-locations: classpath*:mappers/**/*.xml
 #  指定POJO扫描包来让mybatis自动扫描到自定义POJO
-  type-aliases-package: io.parcelx
-  base
+#  type-aliases-package: com.shoukue.sqlite.pojo
   configuration:
     use-generated-keys: true
     #进行自动映射时，数据以下划线命名，如数据库返回的"order_address"命名字段是否映射为class的"orderAddress"字段。默认为false
     map-underscore-to-camel-case: true
+    #配置较复杂，可配置在 mybatis-config.xml中
+#  configLocation: classpath:/mybatis-config.xml

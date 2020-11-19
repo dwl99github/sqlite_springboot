@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xqxc.dao.plat.user.appdev.AppDevManageDao">
+<mapper namespace="com.shoukue.sqlite.mapper.UserMapper">
     <resultMap id="resultMap" type="com.shoukue.sqlite.pojo.User">
         <result column="id" jdbcType="BIGINT" property="id" />
-        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="user_name" jdbcType="VARCHAR" property="username" />
         <result column="password" jdbcType="VARCHAR" property="password" />
     </resultMap>
-    <select id="getUser" parameterType="java.lang.String" resultMap="resultMap">
-        select * from user
+    <select id="getUser" parameterType="string" resultType="com.shoukue.sqlite.pojo.User">
+        select * from user where user_name = #{username}
     </select>
-
 </mapper>

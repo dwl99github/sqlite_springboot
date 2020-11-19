@@ -10,4 +10,5 @@ import com.shoukue.sqlite.pojo.User;
  */
 public interface UserService {
     User findById(Long id);
+    User getUser(String username);
 }

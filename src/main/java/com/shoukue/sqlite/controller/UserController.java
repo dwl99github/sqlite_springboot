@@ -24,4 +24,10 @@ public class UserController {
         User user = userService.findById(id);
         return user;
     }
+
+    @GetMapping("/getUser")
+    public User getUser(String username){
+        User user = userService.getUser(username);
+        return user;
+    }
 }
